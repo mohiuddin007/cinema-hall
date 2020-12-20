@@ -7,7 +7,7 @@ const AddMovie = () => {
 
     const onSubmit = (data, event) => {
         const newMovie = {...data};
-        fetch('http://localhost:5000/addNewMovie',{
+        fetch('https://afternoon-savannah-86330.herokuapp.com/addNewMovie',{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(newMovie)

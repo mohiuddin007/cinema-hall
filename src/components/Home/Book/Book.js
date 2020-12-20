@@ -7,22 +7,22 @@ import Navbar from '../Header/Navbar/Navbar';
 const Book = () => {
     const [allInfo, setAllInfo] = useContext(InformationContext);
     const { register, handleSubmit, watch, errors } = useForm();
-    const {id} = useParams();
+    const { id } = useParams();
     const [movieInfo, setMovieInfo] = useState([]);
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/allMovies')
-        .then(res => res.json())
-        .then(data => {
-            setMovieInfo(data);
-        })
-    },[])
+    useEffect(() => {
+        fetch('https://afternoon-savannah-86330.herokuapp.com/allMovies')
+            .then(res => res.json())
+            .then(data => {
+                setMovieInfo(data);
+            })
+    }, [])
 
     const movie = movieInfo.find(movie => movie.id === id) || {};
 
     const onSubmit = (data, event) => {
         const newBooking = { ...data };
-        fetch('http://localhost:5000/bookSeat', {
+        fetch('https://afternoon-savannah-86330.herokuapp.com/bookSeat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newBooking)

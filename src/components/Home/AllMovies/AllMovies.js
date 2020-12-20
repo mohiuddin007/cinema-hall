@@ -5,7 +5,7 @@ const AllMovies = () => {
     const [movieInfo, setMovieInfo] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/allMovies')
+        fetch('https://afternoon-savannah-86330.herokuapp.com/allMovies')
         .then(res => res.json())
         .then(data => {
             setMovieInfo(data);
