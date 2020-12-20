@@ -1,0 +1,19 @@
+  
+.imgSize{
+    width: 45px;
+}
+.logoSizing{
+    width: 250px;
+}
+.loginCard{
+    /* height: 400px; */
+    margin-top: 40px;
+    padding: 40px;
+    background-color: white;
+}
+.containerStyle{
+    height: 600px;
+}
+.cursor{
+    cursor: pointer;
+}
